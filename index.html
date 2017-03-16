@@ -31,7 +31,7 @@
         },
 
         subtitle: {
-          text: 'View <a href="data-scatter.csv"> source data</a> from a dodgy source', // EDIT link and text
+          text: 'View <a href="data-scatter.csv"> source data</a> from some dodgy source', // EDIT link and text
           useHTML: true
         },
 
@@ -84,7 +84,7 @@
               html = '<table>';
               html += '<tr><th colspan="2"><h3>District: ' + point.name + '</h3></th></tr>';
               html += '<tr><th>Median household income:</th><td>$' + comma(point.x) + '</td></tr>';
-              html += '<tr><th>Grades above/below average:</th><td>' + point.y + '</td></tr>';
+              html += '<tr><th>Number of cats:</th><td>' + point.y + '</td></tr>';
               html += '</table>';
 
               return html;
@@ -145,12 +145,12 @@
   // 'circle', 'square', 'diamond', 'triangle', 'triangle-down'
   function changeSeriesMarkers(data) {
     markers = {
-      'SampleCategory1': 'circle',
+      'SampleCategory1': 'diamond',
       'SampleCategory2': 'triangle'
     }
 
     for (i = 0; i < data.series.length; i++) {
-      data.series[i].marker = {symbol: markers[data.series[i].name] || 'circle'};
+      data.series[i].marker = {symbol: markers[data.series[i].name] || 'diamond'};
     }
   }
 
